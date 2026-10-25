@@ -9,11 +9,23 @@ from sqlalchemy import and_, delete, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.bot.localization import normalize_locale
 from app.application.use_cases.slots import add_minutes_to_time, calculate_available_slots
+from app.bot.localization import normalize_locale
 from app.infrastructure.config import Settings
-from app.infrastructure.db.enums import BookingStatus, NotificationStatus, NotificationType, UserRole
-from app.infrastructure.db.models import Booking, Notification, Service, User, WaitlistEntry, WorkingHours
+from app.infrastructure.db.enums import (
+    BookingStatus,
+    NotificationStatus,
+    NotificationType,
+    UserRole,
+)
+from app.infrastructure.db.models import (
+    Booking,
+    Notification,
+    Service,
+    User,
+    WaitlistEntry,
+    WorkingHours,
+)
 
 REMINDER_NOTIFICATION_TYPES = (NotificationType.REMINDER_24H, NotificationType.REMINDER_2H)
 

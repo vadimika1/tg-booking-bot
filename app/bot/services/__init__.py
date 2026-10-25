@@ -1,3 +1,13 @@
+from app.bot.services.admin import (
+    create_service_by_admin,
+    deactivate_service_by_admin,
+    delete_working_hours_by_admin,
+    list_services_for_admin,
+    list_working_hours_for_admin,
+    set_working_day_off_by_admin,
+    set_working_hours_for_admin,
+    update_service_by_admin,
+)
 from app.bot.services.booking import (
     add_client_to_waitlist,
     build_candidate_dates,
@@ -17,16 +27,6 @@ from app.bot.services.booking import (
     parse_manager_chat_ids,
     reschedule_booking_for_client,
     update_booking_status_by_admin,
-)
-from app.bot.services.admin import (
-    create_service_by_admin,
-    deactivate_service_by_admin,
-    delete_working_hours_by_admin,
-    list_services_for_admin,
-    list_working_hours_for_admin,
-    set_working_day_off_by_admin,
-    set_working_hours_for_admin,
-    update_service_by_admin,
 )
 
 __all__ = [

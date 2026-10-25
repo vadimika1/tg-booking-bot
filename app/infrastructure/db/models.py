@@ -11,7 +11,6 @@ from sqlalchemy import (
     Boolean,
     Date,
     DateTime,
-    Enum as SQLEnum,
     ForeignKey,
     Index,
     Integer,
@@ -20,6 +19,9 @@ from sqlalchemy import (
     Time,
     UniqueConstraint,
     text,
+)
+from sqlalchemy import (
+    Enum as SQLEnum,
 )
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column

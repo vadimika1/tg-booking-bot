@@ -2,7 +2,11 @@ from __future__ import annotations
 
 from datetime import date, datetime
 
-from app.worker.main import DailyReportStats, _build_daily_report_text, _should_send_daily_report_now
+from app.worker.main import (
+    DailyReportStats,
+    _build_daily_report_text,
+    _should_send_daily_report_now,
+)
 
 
 def test_should_send_daily_report_only_after_planned_time() -> None:

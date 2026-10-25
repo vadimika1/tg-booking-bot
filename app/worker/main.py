@@ -3,7 +3,8 @@ from __future__ import annotations
 import asyncio
 import logging
 from dataclasses import dataclass
-from datetime import date, datetime, time as dt_time, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+from datetime import time as dt_time
 from uuid import UUID
 from zoneinfo import ZoneInfo
 
@@ -17,7 +18,14 @@ from app.bot.keyboards import build_reminder_confirmation_keyboard
 from app.bot.localization import LOCALE_EN, normalize_locale
 from app.infrastructure.config import Settings, get_settings
 from app.infrastructure.db.enums import BookingStatus, NotificationStatus, NotificationType
-from app.infrastructure.db.models import AuditLog, Booking, Notification, Service, User, WaitlistEntry
+from app.infrastructure.db.models import (
+    AuditLog,
+    Booking,
+    Notification,
+    Service,
+    User,
+    WaitlistEntry,
+)
 from app.infrastructure.db.session import get_session_factory
 from app.infrastructure.logging import configure_logging
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, timedelta, time
+from datetime import date, time, timedelta
 
 from app.application.use_cases.slots import calculate_available_slots
 

@@ -15,6 +15,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 from sqlalchemy.exc import IntegrityError
 
+from app.application.use_cases.validation import normalize_phone_ru, validate_full_name
 from app.bot.keyboards import (
     build_booking_actions_keyboard,
     build_cancel_confirmation_keyboard,
@@ -27,6 +28,7 @@ from app.bot.keyboards import (
     build_waitlist_offer_keyboard,
     get_language_picker_keyboard,
 )
+from app.bot.keyboards.main import get_main_menu
 from app.bot.localization import (
     DEFAULT_LOCALE,
     LOCALE_EN,
@@ -35,17 +37,16 @@ from app.bot.localization import (
     booking_status_label,
     normalize_locale,
 )
-from app.bot.keyboards.main import get_main_menu
 from app.bot.services import (
     add_client_to_waitlist,
     build_candidate_dates,
     cancel_booking_for_client,
     confirm_booking_by_reminder,
-    create_service_by_admin,
     create_booking_for_client,
+    create_service_by_admin,
     deactivate_service_by_admin,
-    delete_working_hours_by_admin,
     decline_booking_by_reminder,
+    delete_working_hours_by_admin,
     get_client_booking_with_service,
     get_latest_client_booking_with_service,
     get_or_create_client_profile,
@@ -65,7 +66,6 @@ from app.bot.services import (
     update_service_by_admin,
 )
 from app.bot.states.booking import BookingStates
-from app.application.use_cases.validation import normalize_phone_ru, validate_full_name
 from app.infrastructure.config import get_settings
 from app.infrastructure.db.enums import BookingStatus
 from app.infrastructure.db.models import Booking, Service, User, WaitlistEntry
